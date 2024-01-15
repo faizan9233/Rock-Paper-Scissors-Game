@@ -58,7 +58,7 @@ img{
     justify-content: center;
 
 }
-.msg{
+#msg{
     text-align: center;
     margin-top: 3rem;
     background-color: #7392B7;
@@ -67,4 +67,10 @@ img{
     padding: 20px;
     color: white;
 
+}
+.red{
+    background-color: red;
+}
+.green{
+    background-color: green;
 }

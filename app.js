@@ -1,10 +1,10 @@
 let choices = document.querySelectorAll(".choice");
 let myScoreText = document.querySelector("#myscore");
 let compScoreText = document.querySelector("#compscore");
-let msg = document.querySelector(".msg");
+let msg = document.querySelector("#msg");
 let myScore = 0;
 let compScore = 0;
-let Win = true;
+let Win = null;
 
 
 choices.forEach(choice=>{
@@ -24,6 +24,8 @@ const ScoreCount = ()=>{
         myScore++;
         myScoreText.innerText = myScore;
         msg.innerText = "You Win";
+        msg.style.backgroundColor = "green";
+        
         
         
         
@@ -32,14 +34,14 @@ const ScoreCount = ()=>{
     {
         compScore++;
         compScoreText.innerText = compScore;
-        msg.innerText = "Comp Win";
+        msg.innerText = "You Lose";
+        msg.style.backgroundColor = "red";
       
+    }else{
+        msg.innerText = "Game Draw, Play Again";
+        msg.style.backgroundColor = "#759EB8";
     }
-    else{
-        msg.innerText = "Game Draw";
 
-
-    }
 }
 
 const CompChoice = ()=>{
@@ -59,6 +61,7 @@ const PlayGame = (userChoice)=>{
     if(userc===compc)
     {
         console.log(`Draw. Smae ${userc} and ${compc}`);
+        Win = null;
        
     }
     else
